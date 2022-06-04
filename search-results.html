@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Document</title>
+</head>
+
+<body class="bg-dark text-light p-5 min-vh-100 d-flex justify-content-center align-items-center">
+    <section class="row">
+        <aside class="bg-light text-dark card p-4">
+            <form id="artist-search">
+                <fieldset>
+                    <legend>Wiki Artist</legend>
+                    <div class="mb-3">
+                        <label for="q" class="form-label">Search</label>
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="button is-small is-primary">Submit</button>
+                </fieldset>
+            </form>
+        </aside>
+        <main>
+            <h2>Search Results</h2>
+            <section id="search-results">
+                <article class="card">
+                    <h3>Artist Bio</h3>
+                    <p id="bio"> Placeholder
+                    </p>
+                </article>
+            </section>
+        </main>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
