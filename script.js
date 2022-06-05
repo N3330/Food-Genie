@@ -23,9 +23,7 @@ $(document).ready(function(){
 
         videoSearch(YoutubeAPIKEY, search,5);
     })
-
     function videoSearch(key, search, maxResults) {
-
         $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search,function(data) {
             console.log(data);
 
