@@ -2,29 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>Wiki Artist</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Artist</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
-<body class="bg-dark text-light p-5 min-vh-100 d-flex justify-content-center align-items-center">
-    <main class="bg-light text-dark card p-4">
-      <form id="artist-search">
-        <fieldset>
-          <legend>Wiki Artist</legend>
-          <div class="mb-3">
-            <label for="q" class="form-label">Search</label>
-            <input id="artist" type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="button is-primary">Submit</button>
-        </fieldset>
-      </form>
-    </main>
-    <script src="script.js"></script>
-  </body>
+<body>
+  <main class="columns">
+    <form id="artist-search">
+      <fieldset>
+        <legend>Wiki Artist</legend>
+        <div>
+          <label for="q" class="form-label">Search</label>
+          <input type="text" id="q" name="q" class="input is-primary" placeholder="Search">
+        </div>
+        <button type="submit" class="button is-primary" value="Search">Submit</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
 
 </html>
-
-
