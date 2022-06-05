@@ -7,36 +7,41 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>Document</title>
+    <title>Wiki Artist</title>
 </head>
 
-<body class="bg-dark text-light p-5 min-vh-100 d-flex justify-content-center align-items-center">
-    <section class="row">
-        <aside class="bg-light text-dark card p-4">
+<body>
+    <section class="columns">
+        <aside class="container">
+            <br>
+            <h1>Wiki-Artist</h1>
+            <br>
             <form id="artist-search">
-                <fieldset>
-                    <legend>Wiki Artist</legend>
-                    <div class="mb-3">
-                        <label for="q" class="form-label">Search</label>
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="button is-small is-primary">Submit</button>
-                </fieldset>
+                <div>
+                    <label for="q" class="form-label">Search</label>
+                    <input type="text" id="q" name="q" class="input is-primary" placeholder="Search">
+                </div>
+                <button type="submit" class="button is-small is-primary">Submit</button>
             </form>
         </aside>
-        <main>
+        <main class="">
             <h2>Search Results</h2>
             <section id="search-results">
                 <article class="card">
                     <h3>Artist Bio</h3>
-                    <p id="bio"> Placeholder
+                    <p id="bio">
+                        Placeholder
                     </p>
                 </article>
             </section>
+            <div class="">
+                <div class="column is-full"></div>
+                <div id="videos"></div>
+            </div>
         </main>
     </section>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
 
