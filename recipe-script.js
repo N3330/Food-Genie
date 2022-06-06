@@ -25,7 +25,7 @@ $(document).ready(function () {
             console.log(data)
             if (data.meals) {
                 for (var result of data.meals) {
-                    var ingredients = [result.strMeasure1, result.strIngredient1, result.strMeasure2, result.strIngredient2, result.strMeasure3, result.strIngredient3, result.strMeasure4, result.strIngredient4];
+                    var ingredients = [result.strMeasure1 + " of " + result.strIngredient1, result.strMeasure2 + " of " + result.strIngredient2, result.strMeasure3 + " of " + result.strIngredient3, result.strMeasure4 + " of " + result.strIngredient4];
 
                     var h2El = document.createElement("h2");
                     h2El.textContent = result.strMeal;
