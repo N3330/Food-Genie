@@ -58,31 +58,33 @@ $(document).ready(function () {
             console.log(data)
             if (data.meals) {
                 for (var result of data.meals) {
-                    var ingredients = "";
-    
+                    var ingredients = [result.strMeasure1, result.strIngredient1, result.strMeasure2, result.strIngredient2, result.Measure3, result.strIngredient3, result.Measure4, result.strIngredient4];
+
                     var h3El = document.createElement("h3");
                     h3El.textContent = result.strMeal;
 
                     var imgEl = document.createElement("img");
                     imgEl.src = result.strMealThumb;
-    
+
                     var pEl = document.createElement("p");
                     pEl.textContent = result.strInstructions;
-                    console.log(result.s);
-    
-                    $("#recipes").append(h3El,pEl,imgEl);
+
+                    var ulEl = document.createElement("ul");
+                    ulEl.textContent = ingredients;
+
+                    $("#recipes").append(h3El, pEl, imgEl, ulEl);
                 }
 
             } else {
                 console.log("no results");
             }
 
-           
 
 
-                
-            
-           
+
+
+
+
 
             //This isnt working
         })
