@@ -14,17 +14,34 @@
 // Add /preview to the end of the meal image URL
 // /images/media/meals/llcbn01574260722.jpg/preview
 
+// function vaildateInput() {
+
+//     var meal = $("#q").val();
+
+//     if (meal.length == 0) {
+
+//     } else {
+//         searchMeal(meal);
+//     }
+// }
+
+// function searchMeal(q) {
+
+//     var url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + q;
+//     $("#")
+//     var content = $("#");
+// }
 
 $(document).ready(function () {
 
-    // var recipe = ""
+    var recipe = ""
 
 
-    $("#artist-search").submit(function (event) {
+    $("#food-search").submit(function (event) {
 
-        var searchBoxValue = $("artist-search")
+        var searchBoxValue = $("food-search")
         var videos = $("videos");
-        var recipe = $("recipes");
+        // var recipe = $("recipes");
 
         event.preventDefault();
         console.log("form is submitted");
@@ -46,14 +63,38 @@ $(document).ready(function () {
     function recipeSearch(search) {
         //took out maxResults
         $.get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + search, function (data) {
-            console.log(data.meals);
+            console.log(data);
 
-            //This isnt working
-            $("#recipe").append(data.meals);
+            data.items.forEach(item => {
+                recipe = `
+                
+                
+                
+                
+                `
+                
+            });
+            // var json = $.parseJSON(data.meals);
+            // console.log(data.meals);
+            // console.log(json);
+
+            // //This isnt working
+            // $("#recipe").append(data.meals);
         })
     }
 
 })
+// function recipeSearch(search) {
+//     //took out maxResults
+//     let queryURL = "https://www.themealdb.com/api/json/v11/search.php?s=" + search;
+//     axios.get(queryURL)
+//         .then(function (response) {
+//             console.log(recipeSearch);
+//         })
+// }
+
+
+
 
 // if (searchBoxValue != "") {
 //     weatherContainer.innerHTML = " ";
