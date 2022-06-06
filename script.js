@@ -18,6 +18,7 @@ $(document).ready(function(){
     $("#food-search").submit(function (event) {
         event.preventDefault();
         console.log("form is submitted");
+        document.querySelector("#videos").innerHTML = ""; // clears search results for each search
 
         var search = $("#q").val()
 
