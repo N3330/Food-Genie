@@ -44,6 +44,7 @@ $(document).ready(function () {
 
                         // }
                     }
+                for (var result of data.meals) {
 
                     var h2El = document.createElement("h2");
                     h2El.textContent = meal.strMeal;
