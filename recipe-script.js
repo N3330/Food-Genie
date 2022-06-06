@@ -16,28 +16,51 @@ $(document).ready(function () {
 
         var search = $("#q").val()
 
-
         recipeSearch(search);
 
     })
     function recipeSearch(search) {
         $.get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + search, function (data) {
-            console.log(data)
+            // console.log(data)
             if (data.meals) {
-                for (var result of data.meals) {
-                    var ingredients = [result.strMeasure1, result.strIngredient1, result.strMeasure2, result.strIngredient2, result.strMeasure3, result.strIngredient3, result.strMeasure4, result.strIngredient4];
+                for (var meal of data.meals) {
+
+                    var combinedMeasAndIng = [];
+                    var amountOfIngredients = 20;
+
+                    for (let i = 0; i < amountOfIngredients; i++) {
+                        var measurement = meal[`strMeasure${i + 1}`]
+                        var ingredient = meal[`strIngredient${i + 1}`]
+
+                        combinedMeasAndIng.push(`${measurement}:${ingredient}`);
+
+                        console.log(combinedMeasAndIng);
+
+                        // GET ME TO WORK!!
+                        // if (ingredient !== "" || ingredient != null) {
+
+                        //     var dataType = typeof ingredient
+                        //     console.log(`currentIndex: ${i+1} | ${ingredient}`);
+
+                        // }
+                    }
 
                     var h2El = document.createElement("h2");
-                    h2El.textContent = result.strMeal;
+                    h2El.textContent = meal.strMeal;
 
                     var imgEl = document.createElement("img");
-                    imgEl.src = result.strMealThumb;
+                    imgEl.src = meal.strMealThumb;
 
                     var pEl = document.createElement("p");
-                    pEl.textContent = result.strInstructions;
+                    pEl.textContent = meal.strInstructions;
 
                     var ulEl = document.createElement("ul");
-                    ulEl.textContent = ingredients;
+                    combinedMeasAndIng.forEach(element => {
+                        var liEl = document.createElement("li")
+                        liEl.textContent = element;
+                        ulEl.append(liEl);
+
+                    });
 
                     $("#recipes").append(h2El, pEl, imgEl, ulEl);
                 }
