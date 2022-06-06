@@ -1,8 +1,8 @@
-# Project 1: Wiki-Artist
+# Project 1: Wiki-Recipe
 
 ## Resources
 
-- [LIVE SITE](https://N3330.github.io/weather-dashboard/)
+- [LIVE SITE](https://N3330.github.io/wiki-artist/)
 
 - [REPOSITORY](https://github.com/N3330/wiki-artist)
 
@@ -21,17 +21,18 @@
 ## Description
 
 ### User Story:
-AS A music enthusiast
-I want to see a bio of my favorite artist as well as top videos displayed in one location after my search
-SO THAT I have the ability to research an artist and see videos in one spot
+As a food enthusiast
+I want to be able to easily search my favorite recipes and then be presented with that recipe and top video hits for that recipe
+SO THAT I have the ability to see my favorite recipe and some helpful video in one spot.
+
 
 ### Acceptance Criteria:
-GIVEN a bio and video dashboard display
+GIVEN a recipe and video dashboard display
 
-- WHEN I enter an artists name on a landing page and search THEN I am redirected to a display page for that artist
-- When I am on the display page for the artist THEN I see the artists name a short bio provided by Wikipedia as well as five top videos from youTube.  
+- WHEN I enter a recipe or food name on a landing page and search THEN I am redirected to a display page for that recipe
+- When I am on the display page for the recipe THEN I see the recipe name as well as recipe accompanied by the top five videos from youTube.  
 - When I am on the landing page or display page the UI is polished and interactive
-- When I would like to search for another artist I am redirected to the landing page to perform another search
+- When I would like to search for another recipe I am redirected to the landing page to perform another search
 
 ### Project Requirements
 
