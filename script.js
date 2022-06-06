@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     var video = ""
 
-    $("#artist-search").submit(function (event) {
+    $("#food-search").submit(function (event) {
         event.preventDefault();
         console.log("form is submitted");
 
