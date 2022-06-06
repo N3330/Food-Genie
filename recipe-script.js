@@ -39,21 +39,13 @@ $(document).ready(function () {
 
     $("#food-search").submit(function (event) {
 
-        var searchBoxValue = $("food-search")
-        var videos = $("videos");
-        // var recipe = $("recipes");
+        document.querySelector("#recipes").innerHTML = "";
 
         event.preventDefault();
         console.log("form is submitted");
-        console.log(searchBoxValue);
 
         var search = $("#q").val()
 
-        // Clear!! Doesnt work
-        if (searchBoxValue != " ") {
-            videos = " ";
-            recipe = " ";
-        }
 
         //Removed API Key and 5
         recipeSearch(search);
@@ -63,23 +55,36 @@ $(document).ready(function () {
     function recipeSearch(search) {
         //took out maxResults
         $.get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + search, function (data) {
-            console.log(data);
+            console.log(data)
+            if (data.meals) {
+                for (var result of data.meals) {
+                    var ingredients = "";
+    
+                    var h3El = document.createElement("h3");
+                    h3El.textContent = result.strMeal;
 
-            data.items.forEach(item => {
-                recipe = `
-                
-                
-                
-                
-                `
-                
-            });
-            // var json = $.parseJSON(data.meals);
-            // console.log(data.meals);
-            // console.log(json);
+                    var imgEl = document.createElement("img");
+                    imgEl.src = result.strMealThumb;
+    
+                    var pEl = document.createElement("p");
+                    pEl.textContent = result.strInstructions;
+                    console.log(result.s);
+    
+                    $("#recipes").append(h3El,pEl,imgEl);
+                }
 
-            // //This isnt working
-            // $("#recipe").append(data.meals);
+            } else {
+                console.log("no results");
+            }
+
+           
+
+
+                
+            
+           
+
+            //This isnt working
         })
     }
 
