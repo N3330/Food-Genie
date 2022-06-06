@@ -1,0 +1,49 @@
+* {
+    font-family: "Titillium+Web:wght@300", sans-serif;
+}
+
+body {
+    background-color: beige;
+
+}
+
+footer {
+    display: flex;
+    background-color: darkcyan;
+    text-align: center;
+}
+
+p {
+    color: black;
+    
+    
+}
+
+.footer {
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+ul {
+    color: black;
+    margin-bottom: 30px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: darkcyan;
+    z-index: 1;
+    text-align: center;
+}
+
+h1 {
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+h2 {
+    font-size: large;
+    margin-top: 30px;
+    border-bottom: 4px solid rgba(121, 128, 113, .5);
+    border-top: 4px solid rgba(121, 128, 113, 1);
+}
