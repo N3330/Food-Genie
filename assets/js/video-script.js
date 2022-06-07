@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     $("#food-search").submit(function (event) {
         event.preventDefault();
-        console.log("form is submitted");
+        // console.log("form is submitted");
         document.querySelector("#videos").innerHTML = ""; // clears search results for each search
 
         var search = $("#q").val()
@@ -17,7 +17,7 @@ $(document).ready(function () {
     })
     function videoSearch(key, search, maxResults) {
         $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search, function (data) {
-            console.log(data);
+            // console.log(data);
 
             data.items.forEach(item => {
                 video = `

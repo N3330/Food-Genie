@@ -1,4 +1,4 @@
-# Project 1: Wiki-Recipe
+# Project 1: Food Genie
 
 ## Resources
 
@@ -29,10 +29,9 @@ SO THAT I have the ability to see my favorite recipe and some helpful video in o
 ### Acceptance Criteria:
 GIVEN a recipe and video dashboard display
 
-- WHEN I enter a recipe or food name on a landing page and search THEN I am redirected to a display page for that recipe
-- When I am on the display page for the recipe THEN I see the recipe name as well as recipe accompanied by the top five videos from youTube.  
-- When I am on the landing page or display page the UI is polished and interactive
-- When I would like to search for another recipe I am redirected to the landing page to perform another search
+- WHEN I enter a recipe or food name on a landing page and search THEN I am shown a page with top youTube video links as well as recipes that match the search.
+- When I am viewing the displayed information THEN I am given a dish name, steps to cook, ingredient's with quantities, and a picture of the prepared dish.
+- When I am on the display page the UI is polished and interactive.
 
 ### Project Requirements
 
@@ -51,9 +50,9 @@ You and your group will use everything you’ve learned over the past six module
 
 ## Visuals
 ### Landing Page:
-|
-|
-|
+
+![Landing Page](./assets/images/landing-page.png)
+
 ### Display Page:
 |
 |
