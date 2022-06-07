@@ -13,9 +13,9 @@
 </head>
 
 <body>
-  <main class="is-12" style="border: 2px solid red">
-
+  <main>
     <br>
+
     <header>
       <div class="container header">
         <img id="logo" src="./assets/images/genie bottle.png" alt="food genie logo">
@@ -31,34 +31,40 @@
           <button id="saveBtn" type="submit" class="button is-hidden is-warning mb-5 mt-2">Save</button>
         </div>
       </form>
-      <div class="button-box" style="border: 1px solid black"></div>
+      <div class="button-box"></div>
     </header>
-    <div class="container mt-6 is-fullhd" style="border:1px solid black;">
+
+    <div class="container mt-6 is-fullhd">
       <div class="columns">
         <div class="column">
-          <h3 class="title">Column 1</h3>
+          <h3 class="title"></h3>
           <div id="videos" class="iframe-wrapper">
           </div>
         </div>
-
         <div class="column">
-          <h3 class="title">Column 2</h3>
-
+          <h3 class="title"></h3>
           <p id="recipes"></p>
-
         </div>
         <div class="column" id="search-history">
-          <h3 class="title">Column 3</h3>
+          <h3 class="title"></h3>
         </div>
       </div>
     </div>
+
   </main>
+
   <footer id="stayB">
     <p class="credits">Made by Dave Kemp, James Giraldo, and Graham Purnell | 2022</p>
   </footer>
+  <!-- Added module to try and tie each JS to one another -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script type="module" src="./assets/js/recipe-script.js"></script> -->
+  <!-- <script type="module" src="./assets/js/video-script.js"></script> -->
+
+  <!-- Leaving these without module -->
   <script src="./assets/js/recipe-script.js"></script>
   <script src="./assets/js/video-script.js"></script>
+
 </body>
 
 </html>
