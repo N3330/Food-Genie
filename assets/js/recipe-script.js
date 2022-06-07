@@ -34,8 +34,8 @@ $(document).ready(function () {
                         const ingredient = meal[`strIngredient${i + 1}`]
                         const results = [];
                         //Put a colon or dash inbetween the } $
-                        combinedMeasAndIng.push(`${measurement} : ${ingredient}`);
-                        
+                        combinedMeasAndIng.push(`${measurement}` + " : " + `${ingredient}`);
+
                         combinedMeasAndIng.forEach(element => {
 
                             if (element !== ":" || element !== null) {

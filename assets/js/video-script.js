@@ -1,6 +1,6 @@
 // https://www.googleapis.com/youtube/v3/search YOUTUBE API
 // https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCtctob-kkfgeC-tLfL8Yz5KCWNvkjXObA&type=video&q=drake
-$(document).ready(function(){
+$(document).ready(function () {
 
     var YoutubeAPIKEY = "AIzaSyCtctob-kkfgeC-tLfL8Yz5KCWNvkjXObA";
 
@@ -13,10 +13,10 @@ $(document).ready(function(){
 
         var search = $("#q").val()
 
-        videoSearch(YoutubeAPIKEY, search,5);
+        videoSearch(YoutubeAPIKEY, search, 5);
     })
     function videoSearch(key, search, maxResults) {
-        $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search,function(data) {
+        $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search, function (data) {
             console.log(data);
 
             data.items.forEach(item => {
@@ -31,5 +31,13 @@ $(document).ready(function(){
         })
 
     }
-
+    function hideLogo() {
+        var logo = document.getElementById("logo");
+        logo.classList.add("is-hidden");
+    }
+    function fixFooter() {
+        document.getElementById("stayB").style.bottom = "auto";
+    }
+    document.getElementById("searchBtn").addEventListener("click", hideLogo);
+    document.getElementById("searchBtn").addEventListener("click", fixFooter);
 })
