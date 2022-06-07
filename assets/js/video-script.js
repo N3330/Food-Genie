@@ -35,13 +35,22 @@ $(document).ready(function () {
 
 
     var saveBtn = $('#saveBtn');
-    var foodSearches = [];
+    var foodSearches = JSON.parse(localStorage.getItem('foodSearches')) || [];
+    console.log(foodSearches);
     // function to save description to a corresponding hour to local storage.
     saveBtn.on('click', function () {
         var save = $("#q").val();
         console.log(save);
         foodSearches.push(save);
         localStorage.setItem("foodSearches", JSON.stringify(foodSearches));
+        var history = document.getElementById("search-history");
+        foodSearches.forEach(function (searchTerm){
+            console.log(searchTerm);
+            var listItem = document.createElement("button");
+            listItem.textContent = searchTerm;
+            listItem.setAttribute("value", searchTerm);
+            history.appendChild(listItem);
+        })
     });
 
     // events stay when saved even when page is refreshed.

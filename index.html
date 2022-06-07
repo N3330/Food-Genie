@@ -13,16 +13,16 @@
 </head>
 
 <body>
-  <main class="">
+  <main class="is-12" style="border: 2px solid red">
 
     <br>
-    <header class="">
+    <header>
       <div class="container header">
         <img id="logo" src="./assets/images/genie bottle.png" alt="food genie logo">
         <h1 class="is-size-1 has-text-white">Find your Recipes</h1>
       </div>
       <form id="food-search">
-        <div class="container">
+        <div class="container is-fullhd">
           <input type="text" id="q" name="q" class="input is-primary" style="width: 30%" placeholder="Search">
         </div>
         <div>
@@ -31,25 +31,27 @@
           <button id="saveBtn" type="submit" class="button is-hidden is-warning mb-5 mt-2">Save</button>
         </div>
       </form>
+      <div class="button-box" style="border: 1px solid black"></div>
     </header>
-    <div class="container mt-6">
+    <div class="container mt-6 is-fullhd" style="border:1px solid black;">
       <div class="columns">
         <div class="column">
-          <p class=""></p>
-          <div class="columns is-mobile">
-            <div class="column">
-              <div class="iframe-wrapper">
-                <p id="videos" class=""></p>
-              </div>
-            </div>
-            <div class="column">
-              <p id="recipes"></p>
-            </div>
+          <h3 class="title">Column 1</h3>
+          <div id="videos" class="iframe-wrapper">
           </div>
         </div>
 
-      </div>
+        <div class="column">
+          <h3 class="title">Column 2</h3>
 
+          <p id="recipes"></p>
+
+        </div>
+        <div class="column" id="search-history">
+          <h3 class="title">Column 3</h3>
+        </div>
+      </div>
+    </div>
   </main>
   <footer id="stayB">
     <p class="credits">Made by Dave Kemp, James Giraldo, and Graham Purnell | 2022</p>
