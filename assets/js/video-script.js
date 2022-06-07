@@ -30,14 +30,49 @@ $(document).ready(function () {
             });
         })
 
+    };
+
+   
+
+   var saveBtn = $('#saveBtn');
+    // function to save description to a corresponding hour to local storage.
+    saveBtn.on('click', function () {
+        var save = $("#q").val();
+        console.log(save);
+        localStorage.setItem("foodSearches",save);
+    });
+
+   // events stay when saved even when page is refreshed.
+    // function saveEvents() {
+
+    //     $('#q').each(function () {
+    //         var event = $(this).text();
+    //         var search = localStorage.getItem(event);
+
+    //         if (event !== null) {
+    //             $(this).siblings('#q').val(search);
+    //         }
+    //     });
+    // saveEvents();
+    // }
+    
+    function saveBtnAppear() {
+        var saveBtn = document.getElementById('saveBtn');
+        saveBtn.classList.remove('is-hidden');
+        
     }
+    
     function hideLogo() {
         var logo = document.getElementById("logo");
         logo.classList.add("is-hidden");
     }
+
     function fixFooter() {
         document.getElementById("stayB").style.bottom = "auto";
     }
+
+    
+    document.getElementById("searchBtn").addEventListener("click", saveBtnAppear);
     document.getElementById("searchBtn").addEventListener("click", hideLogo);
     document.getElementById("searchBtn").addEventListener("click", fixFooter);
-})
+});
