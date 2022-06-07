@@ -32,17 +32,19 @@ $(document).ready(function () {
 
     };
 
-   
 
-   var saveBtn = $('#saveBtn');
+
+    var saveBtn = $('#saveBtn');
+    var foodSearches = [];
     // function to save description to a corresponding hour to local storage.
     saveBtn.on('click', function () {
         var save = $("#q").val();
         console.log(save);
-        localStorage.setItem("foodSearches",save);
+        foodSearches.push(save);
+        localStorage.setItem("foodSearches", JSON.stringify(foodSearches));
     });
 
-   // events stay when saved even when page is refreshed.
+    // events stay when saved even when page is refreshed.
     // function saveEvents() {
 
     //     $('#q').each(function () {
@@ -55,13 +57,13 @@ $(document).ready(function () {
     //     });
     // saveEvents();
     // }
-    
+
     function saveBtnAppear() {
         var saveBtn = document.getElementById('saveBtn');
         saveBtn.classList.remove('is-hidden');
-        
+
     }
-    
+
     function hideLogo() {
         var logo = document.getElementById("logo");
         logo.classList.add("is-hidden");
@@ -71,7 +73,7 @@ $(document).ready(function () {
         document.getElementById("stayB").style.bottom = "auto";
     }
 
-    
+
     document.getElementById("searchBtn").addEventListener("click", saveBtnAppear);
     document.getElementById("searchBtn").addEventListener("click", hideLogo);
     document.getElementById("searchBtn").addEventListener("click", fixFooter);
