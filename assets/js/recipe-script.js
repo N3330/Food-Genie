@@ -1,6 +1,16 @@
 // https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 // /images/media/meals/llcbn01574260722.jpg/preview
 
+function getIngredients(meal){
+    return(
+        Object.keys(meal)
+        .filter(key=>key.includes('Ingredient'))
+        .map(ingredient=>meal[ingredient])
+        .filter(ingredient=>ingredient)
+    )
+        
+}
+
 $(document).ready(function () {
 
     $("#food-search").submit(function (event) {
@@ -19,25 +29,17 @@ $(document).ready(function () {
                     var combinedMeasAndIng = [];
                     var amountOfIngredients = 20;
 
+                    //This with the index will replace how we are looping below.  
+                    var ingredients = getIngredients(meal);
+
 
                     for (let i = 0; i < amountOfIngredients; i++) {
-                        const measurement = meal[`strMeasure${i + 1}`]
-                        const ingredient = meal[`strIngredient${i + 1}`]
-                        const results = [];
+                        var measurement = meal[`strMeasure${i + 1}`]
+                        var ingredient = meal[`strIngredient${i + 1}`]
+                        // const results = [];
                         combinedMeasAndIng.push(`${measurement}` + " : " + `${ingredient}`);
 
-                        //Get this to work
-                        combinedMeasAndIng.forEach(element => {
-
-                            if (element !== "" || element !== null) {
-                                results.push(element);
-                            }
-                        });
-
-                        console.log(results);
-
                     }
-                    for (var meal of data.meals) {
 
                         var h2El = document.createElement("h2");
                         h2El.textContent = meal.strMeal;
@@ -57,7 +59,6 @@ $(document).ready(function () {
                         });
 
                         $("#recipes").append(h2El, pEl, imgEl, ulEl);
-                    }
 
                 }
             }
