@@ -1,27 +1,18 @@
 // https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 // /images/media/meals/llcbn01574260722.jpg/preview
 
-
 $(document).ready(function () {
-
-    // var recipe = ""
-
 
     $("#food-search").submit(function (event) {
 
         document.querySelector("#recipes").innerHTML = "";
-
         event.preventDefault();
-        console.log("form is submitted");
-
         var search = $("#q").val()
-
         recipeSearch(search);
 
     })
     function recipeSearch(search) {
         $.get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + search, function (data) {
-            // console.log(data)
             if (data.meals) {
                 for (var meal of data.meals) {
 
@@ -33,25 +24,18 @@ $(document).ready(function () {
                         const measurement = meal[`strMeasure${i + 1}`]
                         const ingredient = meal[`strIngredient${i + 1}`]
                         const results = [];
-                        //Put a colon or dash inbetween the } $
                         combinedMeasAndIng.push(`${measurement}` + " : " + `${ingredient}`);
 
+                        //Get this to work
                         combinedMeasAndIng.forEach(element => {
 
-                            if (element !== ":" || element !== null) {
+                            if (element !== "" || element !== null) {
                                 results.push(element);
                             }
                         });
 
                         console.log(results);
 
-                        // GET ME TO WORK!!
-                        // if (ingredient !== "" || ingredient != null) {
-
-                        // var dataType = typeof ingredient
-                        // console.log(`currentIndex: ${i+1} | ${ingredient}`);
-
-                        // }
                     }
                     for (var meal of data.meals) {
 
@@ -75,10 +59,7 @@ $(document).ready(function () {
                         $("#recipes").append(h2El, pEl, imgEl, ulEl);
                     }
 
-                    // } else {
-                    //     console.log("no results");
                 }
-
             }
 
         })
