@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
 
-    var recipe = ""
+    // var recipe = ""
 
 
     $("#food-search").submit(function (event) {
@@ -28,49 +28,60 @@ $(document).ready(function () {
                     var combinedMeasAndIng = [];
                     var amountOfIngredients = 20;
 
+
                     for (let i = 0; i < amountOfIngredients; i++) {
-                        var measurement = meal[`strMeasure${i + 1}`]
-                        var ingredient = meal[`strIngredient${i + 1}`]
+                        const measurement = meal[`strMeasure${i + 1}`]
+                        const ingredient = meal[`strIngredient${i + 1}`]
+                        const results = [];
+                        //Put a colon or dash inbetween the } $
+                        combinedMeasAndIng.push(`${measurement} : ${ingredient}`);
+                        
+                        combinedMeasAndIng.forEach(element => {
 
-                        combinedMeasAndIng.push(`${measurement}:${ingredient}`);
+                            if (element !== ":" || element !== null) {
+                                results.push(element);
+                            }
+                        });
 
-                        console.log(combinedMeasAndIng);
+                        console.log(results);
 
                         // GET ME TO WORK!!
                         // if (ingredient !== "" || ingredient != null) {
 
-                        //     var dataType = typeof ingredient
-                        //     console.log(`currentIndex: ${i+1} | ${ingredient}`);
+                        // var dataType = typeof ingredient
+                        // console.log(`currentIndex: ${i+1} | ${ingredient}`);
 
                         // }
                     }
-                for (var result of data.meals) {
+                    for (var meal of data.meals) {
 
-                    var h2El = document.createElement("h2");
-                    h2El.textContent = meal.strMeal;
+                        var h2El = document.createElement("h2");
+                        h2El.textContent = meal.strMeal;
 
-                    var imgEl = document.createElement("img");
-                    imgEl.src = meal.strMealThumb;
+                        var imgEl = document.createElement("img");
+                        imgEl.src = meal.strMealThumb;
 
-                    var pEl = document.createElement("p");
-                    pEl.textContent = meal.strInstructions;
+                        var pEl = document.createElement("p");
+                        pEl.textContent = meal.strInstructions;
 
-                    var ulEl = document.createElement("ul");
-                    combinedMeasAndIng.forEach(element => {
-                        var liEl = document.createElement("li")
-                        liEl.textContent = element;
-                        ulEl.append(liEl);
+                        var ulEl = document.createElement("ul");
+                        combinedMeasAndIng.forEach(element => {
+                            var liEl = document.createElement("li")
+                            liEl.textContent = element;
+                            ulEl.append(liEl);
 
-                    });
+                        });
 
-                    $("#recipes").append(h2El, pEl, imgEl, ulEl);
+                        $("#recipes").append(h2El, pEl, imgEl, ulEl);
+                    }
+
+                    // } else {
+                    //     console.log("no results");
                 }
 
-            } else {
-                console.log("no results");
             }
 
         })
     }
-
 })
+
