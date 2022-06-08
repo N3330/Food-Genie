@@ -62,7 +62,3 @@ $(document).ready(function () {
         })
     }
 })
-
-// export default function recipeSearch() {
-//     return 
-//   }

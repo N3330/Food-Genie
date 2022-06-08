@@ -1,9 +1,6 @@
 // https://www.googleapis.com/youtube/v3/search YOUTUBE API
 // https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCtctob-kkfgeC-tLfL8Yz5KCWNvkjXObA&type=video&q=drake
 
-//Import it doesnt work
-// import recipeSearch from './recipe-script';
-// console.log(recipeSearch("success"));
 
 $(document).ready(function () {
 
@@ -54,8 +51,15 @@ $(document).ready(function () {
             var history = document.getElementById("search-history");
             history.innerHTML = "";
             foodSearches.forEach(function (searchTerm) {
+
+
                 // console.log(searchTerm);
                 var listItem = document.createElement("button");
+
+                //Added button stuff
+                listItem.className = "button is-primary mb-1 align"
+                console.log(listItem.className)
+
                 listItem.textContent = searchTerm;
                 listItem.setAttribute("value", searchTerm);
                 history.appendChild(listItem);
@@ -64,8 +68,10 @@ $(document).ready(function () {
                     event.preventDefault();
                     var buttonPressed = event.target;
                     var buttonText = buttonPressed.textContent
-                    //This is what connects to recipe-script.js
-                    recipeSearch(buttonText);
+                    ////
+                    ////
+                    //This is what connects to the dynamic buttons
+                    // recipeSearch(buttonText);
 
 
                     // console.log(event.target.textContent);
