@@ -60,9 +60,9 @@ $(document).ready(function () {
                 listItem.setAttribute("value", searchTerm);
                 history.appendChild(listItem);
 
-                listItem.addEventListener("click", function(event) {
+                listItem.addEventListener("click", function (event) {
                     event.preventDefault();
-                    var buttonPressed = event.target; 
+                    var buttonPressed = event.target;
                     var buttonText = buttonPressed.textContent
                     //This is what connects to recipe-script.js
                     recipeSearch(buttonText);
@@ -75,10 +75,10 @@ $(document).ready(function () {
 
             })
 
-    
 
 
-        } 
+
+        }
 
 
 

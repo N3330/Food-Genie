@@ -18,7 +18,7 @@
 
     <header>
       <div class="container header">
-        <img id="logo" src="./assets/images/genie bottle.png" alt="food genie logo">
+          <img id="logo" src="./assets/images/genie bottle.png" alt="food genie logo">
         <h1 class="is-size-1 has-text-white">Find your Recipes</h1>
       </div>
       <form id="food-search">
@@ -26,14 +26,13 @@
           <input type="text" id="q" name="q" class="input is-primary" style="width: 30%" placeholder="Search">
         </div>
         <div>
-          <button id="searchBtn" type="submit" class="button is-primary mb-5 mt-2" value="Search">Submit</button>
-          <button type="reset" class="button is-danger mb-5 mt-2" value="Reset">Reset</button>
-          <button id="saveBtn" type="submit" class="button is-hidden is-warning mb-5 mt-2">Save</button>
+          <button id="searchBtn" type="submit" class="button is-primary mb-5 mt-2 align" value="Search">Submit</button>
+          <button type="reset" class="button is-danger mb-5 mt-2 align" value="Reset">Reset</button>
+          <button id="saveBtn" type="submit" class="button is-hidden is-warning mb-5 mt-2 align">Save</button>
         </div>
       </form>
       <div class="button-box"></div>
     </header>
-
     <div class="container mt-6 is-fullhd">
       <div class="columns">
         <div class="column">
@@ -45,7 +44,7 @@
           <h3 class="title"></h3>
           <p id="recipes"></p>
         </div>
-        <div class="column" id="search-history">
+        <div class="is-narrow column" id="search-history">
           <h3 class="title"></h3>
         </div>
       </div>
