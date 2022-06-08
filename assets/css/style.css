@@ -17,6 +17,16 @@ body {
     height: 60px;
 }
 
+#search-history {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#search-history button {
+    display: block;
+}
+
 p {
     color: black;
 }
