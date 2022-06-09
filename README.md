@@ -1,11 +1,5 @@
 # Project 1: Food Genie
 
-## Resources
-
-- [LIVE SITE](https://N3330.github.io/wiki-artist/)
-
-- [REPOSITORY](https://github.com/N3330/wiki-artist)
-
 ## Table of Contents
 
 - [Resources](#resources)
@@ -17,6 +11,14 @@
 - [Technologies Used](#technologies-used)
 
 - [Authors and Acknowledgement](#authors-and-acknowledgement)
+
+## Resources
+
+- [LIVE SITE](https://n3330.github.io/Food-Genie/)
+
+- [REPOSITORY](https://github.com/N3330/Food-Genie)
+
+
 
 ## Description
 
@@ -53,17 +55,11 @@ You and your group will use everything you’ve learned over the past six module
 
 ![Landing Page](./assets/images/landing-page.png)
 
-### Display Page:
-|
-|
-|
 ### Presentation Slides:
-|
-|
-|
+- [Slides](https://docs.google.com/presentation/d/11wEStHggilmFnGDKmCG1k6DOJKsprF22FTASSS1LJ44/edit?usp=sharing)
+
 ## Technologies Used 
-|
-|
-|
+- [Jquery](https://releases.jquery.com/)
+- [Bulma CSS Framework](https://bulma.io/documentation/)
 ## Authors and Acknowledgement
 Created by (in alphabetical order), James Giraldo, David Kemp, and Graham Purnell 
