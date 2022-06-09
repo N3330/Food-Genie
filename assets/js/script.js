@@ -1,10 +1,11 @@
 // https://www.googleapis.com/youtube/v3/search YOUTUBE API
 // https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCtctob-kkfgeC-tLfL8Yz5KCWNvkjXObA&type=video&q=drake
+// https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 
 // global variable with youtube api key
 var YoutubeAPIKEY = "AIzaSyCtctob-kkfgeC-tLfL8Yz5KCWNvkjXObA";
 
-// funcitons to grab ingredients 
+// functions to grab ingredients 
 function getIngredients(meal) {
     return (
         Object.keys(meal)
@@ -33,18 +34,17 @@ $(document).ready(function () {
 
     $("#food-search").submit(function (event) {
         event.preventDefault();
-        // console.log("form is submitted");
         document.querySelector("#videos").innerHTML = ""; // clears search results for each search
 
         var search = $("#q").val() // grabs value from the q input field 
 
         videoSearch(YoutubeAPIKEY, search, 5);
     });
+
 // function using jquery .get to hit google api for youtoube video search and embed 5 videos in the #videos container
     function videoSearch(key, search, maxResults) {
         document.querySelector("#videos").innerHTML = "";
         $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search, function (data) {
-            // console.log(data);
 
             data.items.forEach(item => {
                 video = `
@@ -59,6 +59,7 @@ $(document).ready(function () {
 
 
     };
+
     // function selecting the food search form and passing it the value of q calling recipeSearch function
     $("#food-search").submit(function (event) {
         document.querySelector("#recipes").innerHTML = "";
@@ -67,12 +68,13 @@ $(document).ready(function () {
         recipeSearch(search);
 
     })
+
 // jquery get request hitting themealdb api for our recipes assinging multiple pieces of data from the api array 
     function recipeSearch(search) {
         document.querySelector("#recipes").innerHTML = "";
         $.get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + search, function (data) {
-            // console.log(data);
             if (data.meals) {
+                
                 for (var meal of data.meals) { // for loop for each meal creating the elements and amending them to the page
 
                     var h2El = document.createElement("h2");
@@ -106,25 +108,18 @@ $(document).ready(function () {
     var saveBtn = $('#saveBtn');
     var foodSearches = JSON.parse(localStorage.getItem('foodSearches')) || [];
     
-    // console.log(foodSearches);
     // function to save description to a corresponding food to local storage.
     saveBtn.on('click', function saveSearch (event) {
         event.preventDefault();
         var save = $("#q").val().trim();
-        console.log(save);
         if (foodSearches.includes(save)){
             var history = document.getElementById("search-history");
             history.innerHTML = "";
             foodSearches.forEach(function (searchTerm) {
 
-
-                // console.log(searchTerm);
                 var listItem = document.createElement("button");
 
-                //Added button stuff
                 listItem.className = "button is-primary mb-1 align"
-                console.log(listItem.className)
-
                 listItem.textContent = searchTerm;
                 listItem.setAttribute("value", searchTerm);
                 history.appendChild(listItem);
@@ -133,25 +128,16 @@ $(document).ready(function () {
                     event.preventDefault();
                     var buttonPressed = event.target;
                     var buttonText = buttonPressed.textContent
-                    ////
-                    ////
-                    //This is what connects to the dynamic buttons
-                    console.log(buttonText);
+                    
                     recipeSearch(buttonText);
                     videoSearch(YoutubeAPIKEY, buttonText, 5);
 
-
-                    // console.log(event.target.textContent);
-
                 })
-
 
             })
 
-
         } else {
     
-
         if (save !== "") {
             foodSearches.push(save);
             localStorage.setItem("foodSearches", JSON.stringify(foodSearches));
@@ -159,13 +145,9 @@ $(document).ready(function () {
             history.innerHTML = "";
             foodSearches.forEach(function (searchTerm) {
 
-
-                // console.log(searchTerm);
                 var listItem = document.createElement("button");
 
-                //Added button stuff
                 listItem.className = "button is-primary mb-1 align"
-                console.log(listItem.className)
 
                 listItem.textContent = searchTerm;
                 listItem.setAttribute("value", searchTerm);
@@ -175,28 +157,14 @@ $(document).ready(function () {
                     event.preventDefault();
                     var buttonPressed = event.target;
                     var buttonText = buttonPressed.textContent
-                    ////
-                    ////
-                    //This is what connects to the dynamic buttons
-                    console.log(buttonText);
+                    
                     recipeSearch(buttonText);
                     videoSearch(YoutubeAPIKEY, buttonText, 5);
 
-
-                    // console.log(event.target.textContent);
-
                 })
-
-
             })
-
-
-
-
         }
     }
-
-
 
     });
 

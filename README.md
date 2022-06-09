@@ -52,14 +52,18 @@ You and your group will use everything you’ve learned over the past six module
 
 ## Visuals
 ### Landing Page:
-
 ![Landing Page](./assets/images/landing-page.png)
 
+### Display Page:
+![Landing Page](./assets/images/food-genie-display-page.png)
+
+
 ### Presentation Slides:
-- [Slides](https://docs.google.com/presentation/d/11wEStHggilmFnGDKmCG1k6DOJKsprF22FTASSS1LJ44/edit?usp=sharing)
+- [Slides](./assets/images/Project%201_%20Food%20Genie.pdf)
 
 ## Technologies Used 
 - [Jquery](https://releases.jquery.com/)
 - [Bulma CSS Framework](https://bulma.io/documentation/)
+
 ## Authors and Acknowledgement
 Created by (in alphabetical order), James Giraldo, David Kemp, and Graham Purnell 
