@@ -1,7 +1,10 @@
 // https://www.googleapis.com/youtube/v3/search YOUTUBE API
 // https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCtctob-kkfgeC-tLfL8Yz5KCWNvkjXObA&type=video&q=drake
 
+// global variable with youtube api key
 var YoutubeAPIKEY = "AIzaSyCtctob-kkfgeC-tLfL8Yz5KCWNvkjXObA";
+
+// funcitons to grab ingredients 
 function getIngredients(meal) {
     return (
         Object.keys(meal)
@@ -11,6 +14,7 @@ function getIngredients(meal) {
     )
 };
 
+//function to grab measurements 
 function getMeasurements(meal) {
     return (
         Object.keys(meal)
@@ -20,7 +24,7 @@ function getMeasurements(meal) {
     )
 };
 
-
+// ready function to initialize the app when user clicks submit grabs the query 
 $(document).ready(function () {
 
     var YoutubeAPIKEY = "AIzaSyCtctob-kkfgeC-tLfL8Yz5KCWNvkjXObA";
@@ -32,11 +36,11 @@ $(document).ready(function () {
         // console.log("form is submitted");
         document.querySelector("#videos").innerHTML = ""; // clears search results for each search
 
-        var search = $("#q").val()
+        var search = $("#q").val() // grabs value from the q input field 
 
         videoSearch(YoutubeAPIKEY, search, 5);
     });
-
+// function using jquery .get to hit google api for youtoube video search and embed 5 videos in the #videos container
     function videoSearch(key, search, maxResults) {
         document.querySelector("#videos").innerHTML = "";
         $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search, function (data) {
@@ -55,6 +59,7 @@ $(document).ready(function () {
 
 
     };
+    // function selecting the food search form and passing it the value of q calling recipeSearch function
     $("#food-search").submit(function (event) {
         document.querySelector("#recipes").innerHTML = "";
         event.preventDefault();
@@ -62,13 +67,13 @@ $(document).ready(function () {
         recipeSearch(search);
 
     })
-
+// jquery get request hitting themealdb api for our recipes assinging multiple pieces of data from the api array 
     function recipeSearch(search) {
         document.querySelector("#recipes").innerHTML = "";
         $.get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + search, function (data) {
             // console.log(data);
             if (data.meals) {
-                for (var meal of data.meals) {
+                for (var meal of data.meals) { // for loop for each meal creating the elements and amending them to the page
 
                     var h2El = document.createElement("h2");
                     h2El.textContent = meal.strMeal;
@@ -81,12 +86,12 @@ $(document).ready(function () {
 
                     var ulEl = document.createElement("ul");
 
-                    var ingredients = getIngredients(meal);
-                    var measurements = getMeasurements(meal);
+                    var ingredients = getIngredients(meal);  // calling get ingredients function
+                    var measurements = getMeasurements(meal); // callling get measurements function
 
                     for (let i = 0; i < ingredients.length; i++) {
                         var liEl = document.createElement("li");
-                        liEl.textContent = ingredients[i] + " - " + measurements[i];
+                        liEl.textContent = ingredients[i] + " - " + measurements[i]; // appending the measurements and ingredients with a for loop. thanks for the help Anthony!
                         ulEl.appendChild(liEl);
                     }
 
@@ -195,12 +200,12 @@ $(document).ready(function () {
 
     });
 
-
+//display save btn after search is started
     function saveBtnAppear() {
         var saveBtn = document.getElementById('saveBtn');
         saveBtn.classList.remove('is-hidden');
     }
-
+// hide the logo after search is started
     function hideLogo() {
         var logo = document.getElementById("logo");
         logo.classList.add("is-hidden");
@@ -210,7 +215,7 @@ $(document).ready(function () {
         document.getElementById("stayB").style.bottom = "auto";
     }
 
-
+//event listeners to call functions above when search button is clicked 
     document.getElementById("searchBtn").addEventListener("click", saveBtnAppear);
     document.getElementById("searchBtn").addEventListener("click", hideLogo);
     document.getElementById("searchBtn").addEventListener("click", fixFooter);
